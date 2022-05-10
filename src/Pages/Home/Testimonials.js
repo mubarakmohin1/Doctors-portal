@@ -6,24 +6,24 @@ import people3 from '../../assets/images/people3.png'
 import ReviewCard from './ReviewCard';
 
 const Testimonials = () => {
-    const reviews =[
+    const reviews = [
         {
-            _id:1,
-            name:'William carry',
-            reviewDetails:'Find the lowest price for California Dental Clinic today! Now on sale at GigaPromo. GigaPromo is the website to compare California Dental Clinic. Search and save now! Save Online. The Best Price.',
-            img:people1
+            _id: 1,
+            name: 'William carry',
+            reviewDetails: 'Find the lowest price for California Dental Clinic today! Now on sale at GigaPromo. GigaPromo is the website to compare California Dental Clinic. Search and save now! Save Online. The Best Price.',
+            img: people1
         },
         {
-            _id:2,
-            name:'John setry',
-            reviewDetails:'Find the lowest price for California Dental Clinic today! Now on sale at GigaPromo. GigaPromo is the website to compare California Dental Clinic. Search and save now! Save Online. The Best Price.',
-            img:people2
+            _id: 2,
+            name: 'John setry',
+            reviewDetails: 'Find the lowest price for California Dental Clinic today! Now on sale at GigaPromo. GigaPromo is the website to compare California Dental Clinic. Search and save now! Save Online. The Best Price.',
+            img: people2
         },
         {
-            _id:3,
-            name:'Paul xeymen',
-            reviewDetails:'Find the lowest price for California Dental Clinic today! Now on sale at GigaPromo. GigaPromo is the website to compare California Dental Clinic. Search and save now! Save Online. The Best Price.',
-            img:people3
+            _id: 3,
+            name: 'Paul xeymen',
+            reviewDetails: 'Find the lowest price for California Dental Clinic today! Now on sale at GigaPromo. GigaPromo is the website to compare California Dental Clinic. Search and save now! Save Online. The Best Price.',
+            img: people3
         },
     ]
     return (
@@ -38,7 +38,7 @@ const Testimonials = () => {
                 </div>
             </div>
             <div className='grid grid-cols-1 lg:grid-cols-3'>
-{reviews.map(review =><ReviewCard key={review._id} review ={review}></ReviewCard>)}
+                {reviews.map(review => <ReviewCard key={review._id} review={review}></ReviewCard>)}
             </div>
         </section>
     );

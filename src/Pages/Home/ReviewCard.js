@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Shared/Button';
+
 
 const ReviewCard = ({ review }) => {
     const { img,reviewDetails,name } = review;
