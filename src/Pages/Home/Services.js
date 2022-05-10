@@ -38,12 +38,12 @@ const Services = () => {
                     services.map(service => <Service key={service._id} service={service}></Service>)
                 }
             </div>
-            <div class="hero min-h-screen bg-white px-24">
-                <div class="hero-content flex-col lg:flex-row">
-                    <img src={treatment} class="max-w-sm rounded-lg shadow-2xl" alt='' />
+            <div className="hero min-h-screen bg-white px-24">
+                <div className="hero-content flex-col lg:flex-row">
+                    <img src={treatment} className="max-w-sm rounded-lg shadow-2xl" alt='' />
                     <div className='pl-10'>
-                        <h1 class="text-5xl font-bold">Execptional Dental Care On Your Terms!</h1>
-                        <p class="py-6">Dental implants are biocompatible tooth restorations which are made to imitate the function of natural tooth roots. When you have a missing tooth, an implant can replace it and support a permanent crown, bridge or denture. Dental implants are the perfect alternative to traditional bridges and partial dentures, because they can function independent of the other teeth.</p>
+                        <h1 className="text-5xl font-bold">Execptional Dental Care On Your Terms!</h1>
+                        <p className="py-6">Dental implants are biocompatible tooth restorations which are made to imitate the function of natural tooth roots. When you have a missing tooth, an implant can replace it and support a permanent crown, bridge or denture. Dental implants are the perfect alternative to traditional bridges and partial dentures, because they can function independent of the other teeth.</p>
                        <Button>Get Started</Button>
                     </div>
                 </div>
