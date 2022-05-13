@@ -1,9 +1,9 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -15,17 +15,23 @@ const SignUp = () => {
         loading,
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
-    if (loading || gLoading) {
+
+      const [updateProfile, updating, UpdatingError] = useUpdateProfile(auth);
+      const navigate = useNavigate();
+
+    if (loading || gLoading||updating) {
         return <Loading></Loading>
     }
     let signInError;
-    if (error || gError) {
-        signInError = <p className='text-red-500'>{error?.message || gError?.message}</p>
+    if (error || gError||UpdatingError) {
+        signInError = <p className='text-red-500'>{error?.message || gError?.message||UpdatingError?.message}</p>
     }
 
-    const onSubmit = data => {
-        console.log(data);
-        createUserWithEmailAndPassword(data.email, data.password)
+    const onSubmit =async data => {
+        
+       await createUserWithEmailAndPassword(data.email, data.password)
+        await updateProfile({ displayName:data.name })
+        navigate('/appointment')
     };
     return (
         <div className='flex h-screen justify-center items-center'>
